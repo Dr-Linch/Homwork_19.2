@@ -1,0 +1,41 @@
+{% extends 'catalog/base.html' %}
+{% load my_tags %}
+{% block content %}
+
+
+<main>
+    <div class="album py-5 bg-body-tertiary">
+        <div class="container">
+            <div class="center">
+            <div class="col-6 mb-5">
+                        <img src="{{ object.preview|mediapath }}" width="500"/>
+                            </div>
+
+                <div class="row">
+
+                        <div class="card shadow-sm mb-2">
+
+                            <div class="card-header">
+                                <div class="card-title">
+                                    Продукт №{{ object.pk }}
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text">Название: {{ object.product_name }}</p>
+                                <p class="card-text">Описание: {{ object.description }}</p>
+                                <p class="card-text">Категория: {{ object.category_name.category_name }}</p>
+                                <p class="card-text">Цена: {{ object.price }} р.</p>
+
+                            </div>
+
+                        </div>
+                    </div>
+            </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+{% endblock %}
